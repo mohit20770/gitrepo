@@ -1,0 +1,55 @@
+Ingredion2017
+
+groupadd -g 10014 sapbsl1
+groupadd -g 10015 sapbsl2
+groupadd -g 10016 sapbsl3
+
+useradd -c "SAP Test User" -d /home/sapbasistes -g users -G sabbl1 -m sapbasistes
+useradd -c "SAP Basis L1" -u 35122 -d /home/sapbasisl1a -g users -G sapbasisl1 -m sapbasisl1a
+useradd -c "SAP Basis L1" -u 35123 -d /home/sapbasisl1b -g users -G sapbasisl1 -m sapbasisl1b
+useradd -c "SAP Basis L1" -u 35124 -d /home/sapbasisl1c -g users -G sapbasisl1 -m sapbasisl1c
+useradd -c "SAP Basis L2" -u 35125 -d /home/sapbasisl2a -g users -G sapbasisl2 -m sapbasisl2a
+useradd -c "SAP Basis L2" -u 35126 -d /home/sapbasisl2b -g users -G sapbasisl2 -m sapbasisl2b
+useradd -c "SAP Basis L2" -u 35127 -d /home/sapbasisl2c -g users -G sapbasisl2 -m sapbasisl2c
+useradd -c "SAP Basis L3" -u 35128 -d /home/sapbasisl3a -g users -G sapbasisl3 -m sapbasisl3a
+useradd -c "SAP Basis L3" -u 35129 -d /home/sapbasisl3b -g users -G sapbasisl3 -m sapbasisl3b
+useradd -c "SAP Basis L3" -u 35130 -d /home/sapbasisl3c -g users -G sapbasisl3 -m sapbasisl3c
+
+
+echo "Ingredion2017" | passwd --stdin sapbasisl1a
+echo "Ingredion2017" | passwd --stdin sapbasisl1b
+echo "Ingredion2017" | passwd --stdin sapbasisl1c
+echo "Ingredion2017" | passwd --stdin sapbasisl2a
+echo "Ingredion2017" | passwd --stdin sapbasisl2b
+echo "Ingredion2017" | passwd --stdin sapbasisl2c
+echo "Ingredion2017" | passwd --stdin sapbasisl3a
+echo "Ingredion2017" | passwd --stdin sapbasisl3b
+echo "Ingredion2017" | passwd --stdin sapbasisl3c
+
+
+vi /etc/sudoers
+
+sapbsl3a ALL=(sapmgr) NOPASSWD:ALL
+sapbsl3b ALL=(sapmgr) NOPASSWD:ALL
+sapbsl3c ALL=(sapmgr) NOPASSWD:ALL
+
+
+
+
+
+/usr/sbin/useradd -c "SAP Basis L1" -u 35122 -d /home/sapbsl1a -g staff -G sapbsl1 -m sapbsl1a
+/usr/sbin/useradd -c "SAP Basis L1" -u 35123 -d /home/sapbsl1b -g staff -G sapbsl1 -m sapbsl1b
+/usr/sbin/useradd -c "SAP Basis L1" -u 35124 -d /home/sapbsl1c -g staff -G sapbsl1 -m sapbsl1c
+/usr/sbin/useradd -c "SAP Basis L2" -u 35125 -d /home/sapbsl2a -g staff -G sapbsl2 -m sapbsl2a
+/usr/sbin/useradd -c "SAP Basis L2" -u 35126 -d /home/sapbsl2b -g staff -G sapbsl2 -m sapbsl2b
+/usr/sbin/useradd -c "SAP Basis L2" -u 35127 -d /home/sapbsl2c -g staff -G sapbsl2 -m sapbsl2c
+/usr/sbin/useradd -c "SAP Basis L3" -u 35128 -d /home/sapbsl3a -g staff -G sapbsl3 -m sapbsl3a
+/usr/sbin/useradd -c "SAP Basis L3" -u 35129 -d /home/sapbsl3b -g staff -G sapbsl3 -m sapbsl3b
+/usr/sbin/useradd -c "SAP Basis L3" -u 35130 -d /home/sapbsl3c -g staff -G sapbsl3 -m sapbsl3c
+
+
+mkgroup -'A' id='10014' sapbsl1
+mkgroup -'A' id='10015' sapbsl2
+mkgroup -'A' id='10016' sapbsl3
+ 
+echo sapbsl1a:Ingredion2017
